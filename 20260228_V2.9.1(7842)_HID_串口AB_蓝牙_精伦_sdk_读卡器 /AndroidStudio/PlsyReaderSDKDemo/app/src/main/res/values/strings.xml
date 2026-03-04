@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">读卡演示程序</string>
+    <string name="action_settings">设置</string>
+    <string name="read_card">读卡</string>
+    <string name="auto">自动</string>
+    <string name="typeA">Type A</string>
+    <string name="typeB">Type B</string>
+    <string name="m1">M1</string>
+    <string name="GAT">港澳台</string>
+    <string name="back_light">关背光</string>
+    <string name="usb_host">U Host</string>
+    <string name="record">录音</string>
+    <string name="play">播放</string>
+    <string name="stop">停止</string>
+    <string name="name">姓名</string>
+    <string name="gender">性别</string>
+    <string name="nation">民族</string>
+    <string name="nation_ex">国籍</string>
+    <string name="birthday">出生日期</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="address">地址</string>
+    <string name="idno">身份证号</string>
+    <string name="idno_A">卡号</string>
+    <string name="idno_foreign">证件号码</string>
+    <string name="old_idno">历史号码</string>
+    <string name="expire_foreign">有效期限</string>
+    <string name="agency">签发机关</string>
+    <string name="expire">有效期</string>
+    <string name="ver">换证次数</string>
+    <string name="agencyCode">当次申请受理机关代码</string>
+    <string name="passportNum">通行证号码</string>
+    <string name="issuanceTimes">签发次数</string>
+    <string name="readcard_hint">请先启动读卡</string>
+    <string name="finger_print">指纹</string>
+    <string name="finger_print_summary">读取指纹信息</string>
+    <string name="finger_print_hint">采集指纹</string>
+    <string name="card_no">卡体管理号:</string>
+    <string name="readCardCid">读CID</string>
+    <string name="start_readcard">启动读卡</string>
+    <string name="stop_readcard">停止读卡</string>
+    <string name="start_slave">启动\n从读卡</string>
+    <string name="stop_slave">停止\n从读卡</string>
+    <string name="dualChannel">双通道</string>
+    <string name="useCache">启用缓存</string>
+    <string name="back">返回</string>
+    <string name="testLag">网络测试</string>
+    <string name="readfp">读指纹</string>
+    <string name="readab">读AB卡</string>
+    <string name="reada">读A卡</string>
+    <string name="readb">读B卡</string>    
+    <string name="spinnerTitle">请选择读卡器</string>
+    <string-array name="devices">
+        <item>内置或USB自适应</item>
+        <item>蓝牙</item>
+        <item>串口</item>
+        <item>USB</item>
+        <item>网络读卡器</item>
+    </string-array>
+    <string name="spinnerTitleConntype">连接类型</string>
+    <string-array name="conntypes">
+        <item>自动选择</item>
+        <item>仅USB</item>
+        <item>仅CAT1</item>
+    </string-array>
+</resources>

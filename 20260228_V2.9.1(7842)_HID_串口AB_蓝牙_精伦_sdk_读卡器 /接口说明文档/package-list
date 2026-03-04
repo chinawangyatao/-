@@ -1,0 +1,6 @@
+com.routon.plsy.device.sdk
+com.routon.plsy.reader.sdk.common
+com.routon.plsy.reader.sdk.demo.model
+com.routon.plsy.reader.sdk.demo.presenter
+com.routon.plsy.reader.sdk.demo.view
+com.routon.plsy.reader.sdk.intf

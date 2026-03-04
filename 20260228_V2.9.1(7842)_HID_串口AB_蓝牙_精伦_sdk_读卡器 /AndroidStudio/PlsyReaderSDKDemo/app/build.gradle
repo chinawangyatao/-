@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "30.0.2"
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "PlsyReaderSDKDemo.apk"
+        }
+    }
+
+    signingConfigs {
+        config {
+            Properties prop = new Properties()
+            InputStream input = project.rootProject.file('keystore/keystore.properties').newDataInputStream()
+            prop.load(input)
+
+            def key_keyAlias = prop.getProperty('keyAlias')
+            def key_keyPassword = prop.getProperty('keyPassword')
+            def key_storeFile = prop.getProperty('storeFile')
+            def key_storePassword = prop.getProperty('storePassword')
+
+            keyAlias key_keyAlias
+            keyPassword key_keyPassword
+            storeFile file('../keystore/' + key_storeFile)
+            storePassword key_storePassword
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.routon.plsy.reader.sdk.demo"
+        minSdkVersion 18
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.2"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation files('libs\\plsyreadersdk.jar')
+    implementation files('libs\\eventbus-3.0.0.jar')
+}

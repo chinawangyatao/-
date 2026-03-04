@@ -1,0 +1,54 @@
+1、libs
+   接口包目录，开发终端程序所需要的jar包和动态库。
+	
+2、接口说明文档
+   接口的使用说明，访问入口为文件夹下index.html：
+   主要看读卡SDK接口说明 com.routon.plsy.reader.sdk.intf 了解接口。
+
+3、PlsyReaderSDKDemo
+   为示例程序源码，采用MVP架构实现，演示了接口包如何调用，核心代码请参考示例程序中ReaderTask.java文件。
+   示例程序演示了如下功能：
+   (1)启动读卡/停止读卡/退出；
+   (2)启动读卡时，优先检查是否有外接读卡器；如果没有接外接读卡器，则判断是否有内置读卡器；
+   (3)读身份证并显示基本信息。
+   (4)USB单次读卡 - 完整演示了打开读卡器、找卡、选卡、读卡、关闭读卡器流程
+   (5)USB手动测试读卡 - 可用来单独测试每一个操作：打开读卡器、找卡、选卡、读卡、关闭读卡器
+      注意：需要先放读卡器，再找卡。
+
+4、PlsyReaderSDKDemo.apk
+   使用PlsyReaderSDKDemo生成的示例程序apk
+   安装命令: adb install xxx/PlsyReaderSDKDemo.apk 
+   [备注：需要apk全路径]
+
+5. 启动示例程序的方法【二选一】:
+1)在桌面点击“读卡示例程序”启动  
+2)命令行启动:
+   adb shell am start com.routon.plsy.reader.sdk.demo/.view.PlsyReaderSDKDemoActivity
+
+6.编译Eclipse版本示例代码说明：
+    当前目录下的PlsyReaderSDKDemo目录是基于Eclipse开发环境构建的项目，可直接导入Eclipse开发环境。
+    1) 把libs目录复制到PlsyReaderSDKDemo\目录
+    2) 导入工程PlsyReaderSDKDemo到eclipse
+    3) 编译程序
+    重要注意事项：
+    1) 工程目录必须是全英文、无括号，例：
+	e:\PlsyReaderSDKDemo
+
+7.编译AndroidStudio版本示例代码说明:
+     AndroidStudio目录下的工程结构是基于Android Studio开发环境构建，可在Android Studio中直接导入后编译和进行开发。
+     导入步骤：
+      1) 把libs目录复制到AndroidStudio\PlsyReaderSDKDemo\app\目录    
+      2) 把AndroidStudio\PlsyReaderSDKDemo导入到Android Studio
+      3) 编译程序
+ 
+     导入工程的重要注意事项：
+     1) 工程目录必须是全英文、无括号，例：
+	e:\AndroidStudio\PlsyReaderSDKDemo
+
+     2)	工程使用的Android Gradle Plugin版本为4.1.3，Gradle版本为6.8.3，如本地开发环境没有对应版本则Android Studio会进行更新，更新完成后
+          才能进行编译，也可以自己修改Project Structure的配置来指定版本；
+
+     3)修改local.properties中的sdk.dir为本地开发环境的Android SDK路径；
+
+     4)工程目录下的keystore文件夹是存放签名证书的目录，如果打包不需要证书的话请修改
+	AndroidStudio\PlsyReaderSDKDemo\app\build.gradle 中的signingConfig配置。
